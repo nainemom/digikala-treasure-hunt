@@ -68,7 +68,7 @@ $on($form, 'submit', (e) => {
   $info.innerHTML = `
   Crowling Products: ${size}<br />
   From Product ${from} To ${to}<br />
-  Images Should Newer Than ${time.toTimeString()} 
+  Images Should Newer Than ${time.toString()} 
   `.trim();
   const startNow = confirm('Start now?');
   if (!startNow) return;
