@@ -12,6 +12,7 @@ const $info = $('#info');
 const $result = $('#result');
 
 const $form = $('#form');
+const $date = $('[name="date"]', $form);
 const $time = $('[name="time"]', $form);
 const $productsGroup = $('[name=productsgroup]', $form);
 const $group = $('[name=group]', $form);
@@ -60,12 +61,7 @@ $on($form, 'submit', (e) => {
   e.preventDefault();
   const productsGroup = Number($productsGroup.value);
   const group = Number($group.value);
-  const time = new Date();
-  const [h,m] = $time.value.split(':').map(x => Number(x));
-  time.setMilliseconds(0);
-  time.setSeconds(0);
-  time.setMinutes(m);
-  time.setHours(h);
+  const time = new Date(`${$date.value} ${$time.value}`);
   
   const size = Math.ceil(products.length / productsGroup);
   const from = (group - 1) * size;
