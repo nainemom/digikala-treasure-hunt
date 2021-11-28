@@ -34,7 +34,6 @@ const start = (crowlingProducts, newerThanTs) => {
     allCrowlers.push(q(() => getProductImages(productId).then((images) => {
       const newImages = images.filter((image) => imgToTs(image) >= newerThanTs);
       if (newImages.length) {
-        ding.play();
         newImages.forEach((newImage) => {
           const hash = imgToHash(newImage);
           if (!$(`[data-hash="${hash}"]`, $result)) {
