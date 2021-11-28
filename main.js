@@ -38,7 +38,7 @@ const start = (crowlingProducts, newerThanTs) => {
           $result.innerHTML += `
             <div>
               <a href="${newImage}" target="blank"> Link </a>
-              <img src="${newImage} alt="${newImage}"/>
+              <img src="${newImage}" alt="${newImage}"/>
             </div>
           `.trim();
         });
