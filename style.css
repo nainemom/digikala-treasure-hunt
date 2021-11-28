@@ -1,8 +1,74 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: monospace;
+  font-size: 15px;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 8px;
+}
+
+input, button {
+  padding: 8px;
+  width: 100%;
+  border: solid 1px gray;
+}
+
+.box {
+  border: solid 1px gray;
+  margin-bottom: 8px;
+}
+.padding {
+  padding: 8px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form > .form-item {
+  padding: 8px;
+}
+
+.form > .form-item > label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.form > .form-item:last-child {
+  border-top: solid 1px gray;
+}
+
+#result > div {
+  padding: 8px;
+  border-bottom: solid 1px gray;
+}
+
+#result > div > a {
+  display: block;
+}
+
+#result > div > img {
+  width: 100%;
+  height: auto;
+}
+
+#status {
+  animation: x infinite 0.5s;
+  border-width: 2px;
+}
+
+@keyframes x {
+  from {
+    border-color: red;
+  }
+  to {
+    border-color: gray;
+  }
 }

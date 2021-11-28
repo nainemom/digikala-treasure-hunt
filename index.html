@@ -7,7 +7,32 @@
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
+    <form id="form" class="form box">
+      <div class="form-item">
+        <label> Since </label>
+        <input type="text" name="time" placeholder="H:M" value="22:00"/>
+      </div>
+      <div class="form-item">
+        <label> Groups </label>
+        <input type="number" name="productsgroup" placeholder="Number of Groups" value="4" />
+      </div>
+
+      <div class="form-item">
+        <label> Selected Group </label>
+        <input type="number" name="group" placeholder="Current Group" value="1" />
+      </div>
+
+      <div class="form-item">
+        <button id="submit-btn"> Submit </button>
+      </div>
+    </form>
+    <div id="info" class="box padding"></div>
+    <div id="status" class="box padding" style="display: none;">
+      
+    </div>
+    <div id="result" class="box padding">
+      
+    </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
