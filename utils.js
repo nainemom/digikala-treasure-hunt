@@ -49,3 +49,5 @@ export const generateQ = () => {
 };
 
 export const imgToTs = (url) => Number(((url.match(/(\d+)\.jpg/g) || [])[0] || '').slice(0, -4)) * 1000;
+
+export const imgToHash = (str) => str.split('/').join('-').split(',').join('-').split('=').join('-').split('.').join('-').split('?')[0];

@@ -1,6 +1,6 @@
 import './style.css'
 import products from './products.json';
-import { generateQ, sound, imgToTs } from './utils';
+import { generateQ, sound, imgToTs, imgToHash } from './utils';
 import dingFile from './ding.mp3?base64';
 const ding = sound(dingFile);
 
@@ -35,12 +35,16 @@ const start = (crowlingProducts, newerThanTs) => {
       if (newImages.length) {
         ding.play();
         newImages.forEach((newImage) => {
-          $result.innerHTML += `
-            <div>
-              <a href="${newImage}" target="blank"> Link </a>
-              <img src="${newImage}" alt="${newImage}"/>
-            </div>
-          `.trim();
+          const hash = imgToHash(newImage);
+          if (!$(`[data-hash="${hash}"]`, $result)) {
+            ding.play();
+            $result.innerHTML += `
+              <div data-hash="${hash}">
+                <a href="${newImage}" target="blank"> Link </a>
+                <img src="${newImage}" alt="${newImage}"/>
+              </div>
+            `.trim();
+          }
         });
       }
       return images;
